@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProductCategoryJoinModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpirationDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+		@foreach (var item in Model) {
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.CategoryName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ProductName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.UnitPrice)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ExpirationDate)
+					</td>
+				</tr>
+		}
+    </tbody>
+</table>
